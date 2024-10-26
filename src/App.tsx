@@ -1,22 +1,22 @@
-import React from 'react';
 import { Product } from './components/Product/Product';
-import { products } from './data/products';
 import './App.css'
+import { useProducts } from './hooks/products';
+import Loader from './components/Loader/Loader';
+import ErrorMesage from './components/ErrorMessage/ErrorMesage';
 
 function App() {
+	const {loading, error, products} = useProducts()
+	
   return (
 		<>
 			<header className='header'>
 				<h1>Market</h1>
 			</header>
 			<section className='container'>
-				<Product product={products[0]}/>
-				<Product product={products[1]}/>
-				<Product product={products[2]}/>
-				<Product product={products[3]}/>
-				<Product product={products[4]}/>
+				{loading && <Loader />}
+				{error && <ErrorMesage error={error}/>}
+				{products.map(product => <Product product={product} key={product.id}/>)}
 			</section>
-
 		</>
   );
 }
