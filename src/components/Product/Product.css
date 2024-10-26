@@ -1,0 +1,19 @@
+.product{
+	width: 500px;
+	margin: 15px auto;
+	text-align: center;
+	border-radius: 15px;
+	border: 1px #AAA solid;
+	padding: 10px;
+}
+
+.product__image{
+	width: 200px;
+	height: 200px;
+	object-fit: contain	;
+	margin: auto;
+}
+
+.product__button{
+	margin: auto;
+}
