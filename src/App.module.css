@@ -6,12 +6,6 @@
 	margin: auto;
 }
 
-.container__loading{
-	text-align: center;
-	font-size: 30px;
-	width: 100%;
-}
-
 .header{
 	max-width: 1100px;
 	margin: auto;
