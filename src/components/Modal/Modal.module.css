@@ -1,5 +1,6 @@
 .background{
 	position: fixed;
+	z-index: 2;
 	left: 0;
 	top: 0;
 	width: 100%;
@@ -8,6 +9,7 @@
 }
 
 .modal{
+	z-index: 3;
 	background-color: #FFF;
 	position: absolute;
 	top:200px;

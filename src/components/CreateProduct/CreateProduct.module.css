@@ -1,4 +1,26 @@
 .label{
 	display: flex;
+	width: calc(100% - 40px);
 	flex-direction: column;
+	margin: 15px 20px;
+}
+
+.button{
+	transition: .2s;
+	padding: 5px;
+	width: 70px;
+	border-radius: 5px;
+	background-color: #fff;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.button:hover{
+	background-color: #EEE;
+}
+
+.form{
+	display: flex;
+	flex-direction: column;
+	align-items: end;
 }

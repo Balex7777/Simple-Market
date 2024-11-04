@@ -140,7 +140,7 @@ export default function CreateProduct({ onCreate }: CreateProductProps) {
           min="1"
         />
       </label>
-      <button type="submit">Add</button>
+      <button type="submit" className={styles.button}>Submit</button>
     </form>
   )
 }

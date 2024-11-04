@@ -1,7 +1,33 @@
 .container{
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: end;
+}
+
+.productList{
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 1100px;
 	justify-content: space-between;
 	margin: auto;
+}
+
+.button{
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.add{
+	transition: .2s;
+	position: relative;
+	top:3px;
+	width: 40px;
+	height: 40px;
+	margin-top: 25px;
+}
+
+.add:hover{
+	transform: scale(1.1);
 }

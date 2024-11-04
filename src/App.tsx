@@ -22,11 +22,19 @@ function App() {
   return (
 		<>
 			<Header cart={cart}/>
-			<button onClick={() => setModal(true)}>Add product</button>
+			
 			<section className={styles.container}>
+			<button onClick={() => setModal(true)} className={styles.button}>
+				<svg className={styles.add} width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<circle cx="12" cy="12" r="10" stroke="#1C274C" stroke-width="1.5"/>
+					<path d="M15 12L12 12M12 12L9 12M12 12L12 9M12 12L12 15" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+				</svg>
+			</button>
 				{loading && <Loader />}
 				{error && <ErrorMesage error={error}/>}
-				{products.map(product => <Product product={product} key={product.id} setCart={setCart}/>)}
+				<div className={styles.productList}>
+					{products.map(product => <Product product={product} key={product.id} setCart={setCart}/>)}
+				</div>
 			</section>
 			{modal && 
 			<Modal title="Create product" onClose={() => setModal(false)}>
