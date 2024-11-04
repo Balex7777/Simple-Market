@@ -7,10 +7,12 @@ import Modal from './components/Modal/Modal';
 import CreateProduct from './components/CreateProduct/CreateProduct';
 import { useState } from 'react';
 import { IProduct } from './models';
+import Header from './components/Header/Header';
 
 function App() {
 	const {loading, error, products, addProduct} = useProducts()
 	const [modal, setModal] = useState(false)
+	const [cart, setCart] = useState(0)
 
 	const createHandler = (product:IProduct) => {
 		addProduct(product)
@@ -19,15 +21,12 @@ function App() {
 
   return (
 		<>
-			<header className={styles.header}>
-				<h1>Market</h1>
+			<Header cart={cart}/>
 			<button onClick={() => setModal(true)}>Add product</button>
-
-			</header>
 			<section className={styles.container}>
 				{loading && <Loader />}
 				{error && <ErrorMesage error={error}/>}
-				{products.map(product => <Product product={product} key={product.id}/>)}
+				{products.map(product => <Product product={product} key={product.id} setCart={setCart}/>)}
 			</section>
 			{modal && 
 			<Modal title="Create product" onClose={() => setModal(false)}>

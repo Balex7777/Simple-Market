@@ -1,0 +1,11 @@
+.header{
+	background-color: #fff;
+	position: sticky;
+	top: 0;
+	max-width: 1100px;
+	margin: auto;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-bottom: 1px #aaa solid;
+}
