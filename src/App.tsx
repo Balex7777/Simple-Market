@@ -1,5 +1,5 @@
 import { Product } from './components/Product/Product';
-import './App.css'
+import styles from "./App.module.css"
 import { useProducts } from './hooks/products';
 import Loader from './components/Loader/Loader';
 import ErrorMesage from './components/ErrorMessage/ErrorMesage';
@@ -19,12 +19,12 @@ function App() {
 
   return (
 		<>
-			<header className='header'>
+			<header className={styles.header}>
 				<h1>Market</h1>
 			<button onClick={() => setModal(true)}>Add product</button>
 
 			</header>
-			<section className='container'>
+			<section className={styles.container}>
 				{loading && <Loader />}
 				{error && <ErrorMesage error={error}/>}
 				{products.map(product => <Product product={product} key={product.id}/>)}

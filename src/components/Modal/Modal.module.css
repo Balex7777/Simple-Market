@@ -1,4 +1,4 @@
-.modal__background{
+.background{
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -19,7 +19,7 @@
 	padding: 20px;
 }
 
-.modal__title{
+.title{
 	margin: 0;
 	text-align: center;
 }

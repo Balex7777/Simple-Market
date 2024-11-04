@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react'
-import "./Modal.css"
+import styles from "./Modal.module.css"
 
 interface IModalProps{
 	title: string
@@ -10,9 +10,9 @@ interface IModalProps{
 export default function Modal({title, children, onClose}:IModalProps) {
 	return (
 		<>
-			<div className='modal__background' onClick={onClose}/>
-			<div className='modal'>
-				<h2 className="modal__title">{title}</h2>
+			<div className={styles.background} onClick={onClose}/>
+			<div className={styles.modal}>
+				<h2 className={styles.title}>{title}</h2>
 				{children}
 			</div>
 		</>

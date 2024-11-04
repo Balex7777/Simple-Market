@@ -7,13 +7,13 @@
 	padding: 10px;
 }
 
-.product__image{
+.image{
 	width: 200px;
 	height: 200px;
 	object-fit: contain	;
 	margin: auto;
 }
 
-.product__button{
+.button{
 	margin: auto;
 }

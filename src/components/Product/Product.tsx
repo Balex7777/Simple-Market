@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import "./Product.css"
+import styles from "./Product.module.css" 
 import { IProduct } from '../../models';
 
 interface ProductProps {
@@ -10,12 +10,12 @@ export function Product({product}: ProductProps){
 	const [details, setDetails] = useState(false)
 
 	return (
-		<div className='product'>
-			<img src={product.image} alt={product.title} className='product__image'></img>
+		<div className={styles.product}>
+			<img src={product.image} alt={product.title} className={styles.image}></img>
 			<h2>{product.title}</h2>
 			<p>{product.price}</p>
 			<button 
-				className='product__button'
+				className={styles.button}
 				onClick={() => setDetails(prev => !prev)}
 			>
 				{ details ? 'Hide details' : 'Show details'}
