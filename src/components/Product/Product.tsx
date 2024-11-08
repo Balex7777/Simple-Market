@@ -1,17 +1,30 @@
 import React, { useState } from 'react';
 import styles from "./Product.module.css" 
 import { IProduct } from '../../models';
+import { motion } from "framer-motion"
 
 interface ProductProps {
 	product: IProduct
 	setCart: React.Dispatch<React.SetStateAction<number>>
 }
 
+const variants = {
+	open: {height: "auto", opacity: 1},
+	closed: {height: 0,  opacity: 0}
+}
+
 export function Product({product, setCart}: ProductProps){
 	const [details, setDetails] = useState(false)
 
 	return (
-		<div className={styles.product}>
+		<motion.div
+			initial={{ opacity: 0, y: 60 }}
+			whileInView={{ opacity: 1, y: 0, transition: {
+				type: "easeOut",
+				duration: 0.6
+			} }}
+			viewport={{once: true}}
+			className={styles.product}>
 			<img src={product.image} alt={product.title} className={styles.image}></img>
 			<h2 className={styles.title}>{product.title}</h2>
 			<div className={styles.container}>
@@ -24,12 +37,17 @@ export function Product({product, setCart}: ProductProps){
 						<span>{product.rating?.rate ?? 0}</span>
 					</p>
 				</div>
-				<button className={styles.button} onClick={() => setCart(prev => prev + 1)}>
+				<motion.button 
+					className={styles.button} 
+					onClick={() => setCart(prev => prev + 1)}
+					whileTap={{ scale: 0.9 }}
+					whileHover={{ scale: 1.1 }}
+				>
 					
 					<svg className={styles.button__add} width="800px" height="800px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M21 5L19 12H7.37671M20 16H8L6 3H3M16 5.5H13.5M13.5 5.5H11M13.5 5.5V8M13.5 5.5V3M9 20C9 20.5523 8.55228 21 8 21C7.44772 21 7 20.5523 7 20C7 19.4477 7.44772 19 8 19C8.55228 19 9 19.4477 9 20ZM20 20C20 20.5523 19.5523 21 19 21C18.4477 21 18 20.5523 18 20C18 19.4477 18.4477 19 19 19C19.5523 19 20 19.4477 20 20Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
-				</button>
+				</motion.button>
 			</div>
 			
 			<button 
@@ -38,10 +56,13 @@ export function Product({product, setCart}: ProductProps){
 			>
 				<p className={styles.button__description}>{ details ? 'Hide details' : 'Show details'}</p>
 			</button>
-			{details &&
-			<div className={styles.description}>
-				<p>{product.description}</p>	
-			</div>}
-		</div>
+			<motion.div 
+				initial={false}
+				animate={details ? "open": "closed"}
+				variants={variants}
+				className={styles.description}>
+				<p style={{margin: 0}}>{product.description}</p>	
+			</motion.div>
+		</motion.div>
 	)
 }

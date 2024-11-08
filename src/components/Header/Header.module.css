@@ -10,3 +10,9 @@
 	align-items: center;
 	border-bottom: 1px #aaa solid;
 }
+
+.cart{
+	display: flex;
+	align-items: center;
+	font-weight: 700;
+}
