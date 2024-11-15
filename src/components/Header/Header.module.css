@@ -16,3 +16,9 @@
 	align-items: center;
 	font-weight: 700;
 }
+
+@media (max-width: 1150px) {
+	.header{
+		padding: 0 25px;
+	}
+}
