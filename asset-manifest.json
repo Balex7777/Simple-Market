@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Simple-Market/static/css/main.04b757d1.css",
+    "main.css": "/Simple-Market/static/css/main.ba6e8b59.css",
     "main.js": "/Simple-Market/static/js/main.a71c17ed.js",
     "index.html": "/Simple-Market/index.html",
-    "main.04b757d1.css.map": "/Simple-Market/static/css/main.04b757d1.css.map",
+    "main.ba6e8b59.css.map": "/Simple-Market/static/css/main.ba6e8b59.css.map",
     "main.a71c17ed.js.map": "/Simple-Market/static/js/main.a71c17ed.js.map"
   },
   "entrypoints": [
-    "static/css/main.04b757d1.css",
+    "static/css/main.ba6e8b59.css",
     "static/js/main.a71c17ed.js"
   ]
 }
